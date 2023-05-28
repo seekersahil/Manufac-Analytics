@@ -20,7 +20,7 @@ const Table = ({title,data}) => {
         </div>
         <div>
           <input type="radio" checked={modeType==="mode"&&"checked"} id={`${title}-modeType-mode`} key={`${title}-modeType-mode`} name={`${title}-modeType`} value="mode" onChange={selectModeType}></input>
-          <label htmlFor={`${title}-modeType-mode`}>All values with highest frequency</label>
+          <label htmlFor={`${title}-modeType-mode`}>All Modes: All values with highest frequency</label>
         </div>
       </div>
       <table className="table">
@@ -42,9 +42,9 @@ const Table = ({title,data}) => {
                   <td key={`${title}-${operation}-${index}`}>
                     {
                       operation === "Mode"? 
-                        modeType=== "firstMode"?
-                          value[modeType]
-                          :value[modeType].join(", ")
+                        modeType=== "mode"?
+                          value[modeType].join(", ")
+                          :value[modeType]
                         :value
                     }
                   </td>
